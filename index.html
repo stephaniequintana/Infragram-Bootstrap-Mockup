@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+<body>
+  <!-- Modal -->
+  <div class="modal fade" id="quickStartModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <h3>Quick start</h3>
+          <p>Choose from these presets to get up and running quickly. These auto-load common 2. Analysis and 3. Colorize settings so you don't have to manually choose them.</p>
+          <table class="table">
+            <tr>
+              <td width="30%"><b>Raw</b></td>
+              <td width="30%">Just what your camera sees.</td>
+              <td><a class="btn btn-primary" id="preset_raw">Begin</a></td>
+            </tr>
+            <tr>
+              <td><b>NDVI for <span style="color:blue;">BLUE</span> filters</b></td>
+              <td>basic plant analysis for <a href="http://store.publiclab.org/product/infragram-diy-filter-pack">Infragram filter packs</a> and <a href="http://store.publiclab.org/product/infragram-webcam">webcams</a></td>
+              <td><a class="btn btn-primary" id="preset_ndvi_blue">Basic</a>
+                  <a class="btn btn-success" id="preset_ndvi_blue_color">Colorized</a></td>
+            </tr>
+            <tr>
+              <td><b>NDVI for <span style="color:red;">RED</span> filters</b></td>
+              <td>basic plant analysis for <a href="http://store.publiclab.org/products/infragram-point-shoot-plant-cam">Infragram Point &amp; Shoot cameras</a></td>
+              <td><a class="btn btn-primary" id="preset_ndvi_red">Basic</a>
+                  <a class="btn btn-success" id="preset_ndvi_red_color">Colorized</a></td>
+            </tr>
+          </table>
+            <p>Post a research note at <a href="http://publiclab.org">PublicLab.org</a> and email <a href="mailto:plots-dev@googlegroups.com">plots-dev@googlegroups.com</a> to suggest new presets.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="close btn btn-info" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">Set Option</span>
+          </button>
+          <a data-dismiss="modal" data-toggle="modal" class="btn">cancel</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="logo"></div>
+  <div class="container-fluid">
+    <div class="row">
+      <div id="action-row" class="col-12 col-md-2 pt-md-3">
+        <div class="actions d-flex justify-content-md-center align-items-center flex-md-column">
+          <div class="">
+            <button type="button" class="btn btn-info m-3" data-toggle="modal" data-target="#quickStartModal">Quick Start</button>
+          </div>
+          <div class="order-2 ml-5 ml-md-0">
+            <button id="save" disabled class="m-3 ml-5 ml-md-0">save</button>
+          </div>
+          <div class="order-2">
+            <button  id="download" disabled class="m-3">download</button>
+          </div>
+          <div class="order-2">
+            <button id="export" disabled class="m-3">export</button>
+          </div>
+          <div class="d-none d-md-block">
+            <button class="m-3 quick-start">?</button>
+          </div>
+          <div class="d-none d-md-block">
+            <button class="btn-info m-3">overlay</button>
+          </div>
+          <div class="d-none d-md-block">
+            <button class="btn-info m-3">colorize</button>
+          </div>
+          <div class="d-none d-md-block">
+            <button class="btn-info m-3">analysis mode</button>
+          </div>
+          <div class="d-none d-md-block">
+            <button id="run" class="btn-info m-3">run conversion</button>
+          </div>
+        </div>
+      </div>
+      <div id="image" class="col-12 col-md-10">
+        <div class="canvas">
+          <img id="img-upload" src="img/upload.webp" alt="uploaded image" style="visibility: hidden">
+          <img id="img-analyzed" class="img-analyzed" src="img/analyzed.webp" alt="uploaded image" style="visibility: hidden">
+        </div>
+        <div id="intro" class="intro">
+          <button class="intro-btn">Upload Video</button>
+          <button id="upload" class="intro-btn">Upload Image</button>
+          <button class="intro-btn">Connect to an Infragram Webcam</button>
+        </div>
+      </div>
+      <div id="action-row" class="col-12 d-md-none">
+        <div class="d-flex justify-content-center align-items-center">
+          <button class="m-3 btn-info question">?</button>
+          <button class="m-3 btn-info">overlay</button>
+          <button class="m-3 btn-info colorize">colorize</button>
+          <button class="m-3 btn-info">analyze</button>
+          <button class="m-3 btn-info">run</button>
+        </div>
+      </div>
+      <div class="col-12 d-flex justify-content-center">
+        <img id="colorize" class="d-none" src="img/color-scale.webp" alt="colormap bar">
+      </div>
+      <div id="modal-row" class="col-12 pl-5">
+        <div class="d-flex justify-content-center align-items-center">
+          <button class="m-3 col-3">Welcome Tutorial</button>
+          <button class="m-3 col-3">Camera Info</button>
+          <button class="m-3 col-3">Interpret Colormap</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+  <script>
+    const save = document.getElementById('save');
+    const download = document.getElementById('download');
+    const exprt = document.getElementById('export');
+    const imgUp = document.getElementById('img-upload');
+    const imgAnz = document.getElementById('img-analyzed');
+    const upload = document.getElementById('upload');
+    const intro = document.getElementById('intro');
+    const run = document.getElementById('run');
+    const colorBar = document.getElementById('colorize');
+
+    function uploadImg() {
+      intro.style.visibility = "hidden"
+      imgUp.style.visibility = "visible";
+    }
+
+    function convertImg() {
+      imgUp.style.visibility = "hidden";
+      imgAnz.style.visibility = "visible";
+      save.removeAttribute('disabled');
+      download.removeAttribute('disabled');
+      exprt.removeAttribute('disabled');
+      colorBar.classList.add('d-block');
+    }
+
+    upload.addEventListener('click', uploadImg);
+    run.addEventListener('click', convertImg);
+  </script>
+</body>
+</html>
