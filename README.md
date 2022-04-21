@@ -11,3 +11,13 @@ Please see the html file for specifics.
 
 ![mobile wireframe](assets/mobile.png)
 ![desktop wireframe](assets/desktop.png)
+
+|  from https://pixlr.com       | from https://photopea.com  |  
+| ----------- | ----|
+| | (width adjusted for right column ad space) |
+| ![pixlr](https://user-images.githubusercontent.com/81270711/164542925-0990cf1d-6af4-425f-9306-0d19926fd24c.png) | ![photopea](https://user-images.githubusercontent.com/81270711/164543335-f2ee7004-2dbf-459e-ab68-c7cc91c488a5.png) | 
+  
+
+
+
+
