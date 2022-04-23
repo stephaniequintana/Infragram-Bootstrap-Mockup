@@ -9,15 +9,18 @@ Please see the html file for specifics.
 
 ![gif of the responsive design](assets/infragram.gif)
 
-![mobile wireframe](assets/mobile.png)
+![Screen Shot 2022-04-22 at 5 54 22 PM](https://user-images.githubusercontent.com/81270711/164844048-e20dbfbf-7047-43ca-8f49-ea8011329e37.png)
+
+
+<!--![mobile wireframe](assets/mobile.png)-->
 ![desktop wireframe](assets/desktop.png)
 
 |  from https://pixlr.com       | from https://photopea.com  |  
 | ----------- | ----|
 | | (width adjusted for right column ad space) |
-| ![pixlr](https://user-images.githubusercontent.com/81270711/164542925-0990cf1d-6af4-425f-9306-0d19926fd24c.png) | ![photopea](https://user-images.githubusercontent.com/81270711/164543335-f2ee7004-2dbf-459e-ab68-c7cc91c488a5.png) | 
+| ![pixlr](https://user-images.githubusercontent.com/81270711/164542925-0990cf1d-6af4-425f-9306-0d19926fd24c.png) | ![Screen Shot 2022-04-22 at 7 50 03 AM](https://user-images.githubusercontent.com/81270711/164717787-8ef1f344-5f43-469b-99d4-b6b9768f6dc3.png) | 
   
 
 
-
+![Screen Shot 2022-04-22 at 7 50 03 AM](https://user-images.githubusercontent.com/81270711/164717787-8ef1f344-5f43-469b-99d4-b6b9768f6dc3.png)
 
